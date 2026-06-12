@@ -48,10 +48,12 @@ jobs:
           script: |
             cd /home/azureuser/EMS
 
-            git pull origin main
+            git fetch origin
 
-            docker compose pull
+            git reset --hard origin/main
 
-            docker compose up -d --force-recreate
+            sudo docker compose pull
 
-            docker image prune -af
+            sudo docker compose up -d --force-recreate
+
+            sudo docker image prune -af
