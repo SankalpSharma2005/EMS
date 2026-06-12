@@ -1,19 +1,19 @@
 services:
 
   backend:
-    build:
-      context: ./backend
+    image: sankalpsharma2005/ems-backend:latest
     container_name: ems-backend
     ports:
       - "3000:3000"
     env_file:
       - ./backend/.env
+    restart: unless-stopped
 
   frontend:
-    build:
-      context: ./frontend
+    image: sankalpsharma2005/ems-frontend:latest
     container_name: ems-frontend
     ports:
       - "5173:5173"
     depends_on:
       - backend
+    restart: unless-stopped
