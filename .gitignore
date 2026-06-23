@@ -30,3 +30,13 @@ Thumbs.db
 # Employee uploaded images
 backend/public/uploads/*
 !backend/public/uploads/.gitkeep
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# SSH Keys
+*.pem
+terraform-vm-key
+terraform-vm-key.pub
