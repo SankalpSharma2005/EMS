@@ -5,7 +5,7 @@ import React, {
     useEffect
 } from 'react'
 import axios from 'axios'
-import { API_URL, SERVER_URL } from "../../config/api";
+import { API_URL, SERVER_URL } from "../config/api";
 
 const userContext = createContext()
 

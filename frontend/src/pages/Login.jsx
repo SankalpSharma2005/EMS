@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../contexts/authContext";
 import { useNavigate } from "react-router-dom";
-import { API_URL, SERVER_URL } from "../../config/api";
+import { API_URL, SERVER_URL } from "../config/api";
 
 const Login = () => {
 

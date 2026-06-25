@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { API_URL, SERVER_URL } from "../../config/api";
+import { API_URL, SERVER_URL } from "../config/api";
 
 export const columns = [
   {
