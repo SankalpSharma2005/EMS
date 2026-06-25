@@ -1,7 +1,7 @@
 services:
-
   backend:
-    image: sankalpsharma2005/ems-backend:latest
+    build:
+      context: ./backend
     container_name: ems-backend
     ports:
       - "3000:3000"
@@ -10,7 +10,8 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: sankalpsharma2005/ems-frontend:latest
+    build:
+      context: ./frontend
     container_name: ems-frontend
     ports:
       - "5173:5173"
