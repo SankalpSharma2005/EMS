@@ -31,7 +31,7 @@ useEffect(() => {
           dob: new Date(emp.dob).toLocaleDateString(), 
           profileImage: (
     <img
-      src={`${SERVER_URL}/uploads/${employee.userId?.profileImage}`}
+      src={`${SERVER_URL}/uploads/${emp.userId?.profileImage}`}
       alt="Employee"
       className="w-10 h-10 rounded-full"
     />
