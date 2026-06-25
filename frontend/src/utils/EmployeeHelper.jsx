@@ -1,61 +1,6 @@
-/*import axios from "axios";
-export const fetchDepartments = async () => {
-    let departments
-  try {
-    const response = await axios.get(
-      "http://localhost:3000/api/department",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-
-    if (response.data.success) {
-      departments = response.data.departments;
-    }
-  } catch (error) {
-    if (error.response && !error.response.data.success) {
-      alert(error.response.data.error);
-    }
-  }
-  return departments
-  import { useNavigate } from "react-router-dom";
-
-export const EmployeeButtons = ({ Id }) => {
-    const navigate = useNavigate();
-
-    return (
-        <div className="flex space-x-3">
-            <button
-                className="px-3 py-1 bg-teal-600 text-white"
-                onClick={() => navigate(`/admin-dashboard/department/${Id}`)}
-            >
-                View
-            </button>
-
-            <button
-                className="px-3 py-1 bg-blue-600 text-white"
-            >
-                Edit
-            </button>
-
-            <button
-                className="px-3 py-1 bg-red-600 text-white"
-            >
-                Salary
-            </button>
-
-            <button
-                className="px-3 py-1 bg-red-600 text-white"
-            >
-                Leave
-            </button>
-        </div>
-    );
-};*/
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL, SERVER_URL } from "../../config/api";
 
 export const columns = [
   {
@@ -105,7 +50,7 @@ export const EmployeeButtons = ({ Id }) => {
     try {
 
         const response = await axios.delete(
-            `http://localhost:3000/api/employee/${Id}`,
+            `${API_URL}/employee/${Id}`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`

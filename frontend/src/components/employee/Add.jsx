@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import { API_URL, SERVER_URL } from "../../config/api";
 const Add = () => {
 
     const [formData, setFormData] = useState({})
@@ -28,7 +28,7 @@ const Add = () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/employee/add",
+      `${API_URL}/employee/add`,
       formDataObj,
       {
         headers: {

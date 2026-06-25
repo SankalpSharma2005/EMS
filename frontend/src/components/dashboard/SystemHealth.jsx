@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_URL, SERVER_URL } from "../../config/api";
 const SystemHealth = () => {
 
     const [health, setHealth] = useState(null);
@@ -8,7 +8,7 @@ const SystemHealth = () => {
     const fetchHealth = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:3000/api/health"
+                `${API_URL}/health`
             );
 
             setHealth(response.data);

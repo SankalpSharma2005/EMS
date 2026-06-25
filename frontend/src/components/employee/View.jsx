@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios'; // Assumed based on the axios.get call in the screenshots
+import { API_URL, SERVER_URL } from "../../config/api";
 
 const View = () => {
     const { id } = useParams();
@@ -10,7 +11,7 @@ const View = () => {
         const fetchEmployee = async () => {
             try {
                 const responnse = await axios.get(
-                    `http://localhost:3000/api/employee/${id}`,
+                    `${API_URL}/employee/${id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -42,8 +43,8 @@ const View = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <img 
-                        src={`http://localhost:3000/uploads/${employee.userId?.profileImage}`} 
+                    <img
+                        src={`${API_URL.replace("/api", "")}/uploads/${employee.userId?.profileImage}`}
                         className="rounded-full border w-72"
                         alt="Profile"
                     />

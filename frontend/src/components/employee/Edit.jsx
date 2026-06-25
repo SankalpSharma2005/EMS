@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import { API_URL, SERVER_URL } from "../../config/api";
 const Edit = () => {
     const navigate = useNavigate();
     const [employee, setEmployee] = useState({
@@ -17,7 +17,7 @@ const Edit = () => {
         const fetchEmployees = async () => {
             try {
                 const responnse = await axios.get(
-                    `http://localhost:3000/api/employee/${id}`,
+                    `${API_URL}/employee/${id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -63,7 +63,7 @@ const Edit = () => {
 
   try {
     const response = await axios.put(
-      `http://localhost:3000/api/employee/${id}`,
+      `${API_URL}/employee/${id}`,
        employee,
       {
         headers: {

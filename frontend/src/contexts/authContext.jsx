@@ -5,6 +5,7 @@ import React, {
     useEffect
 } from 'react'
 import axios from 'axios'
+import { API_URL, SERVER_URL } from "../../config/api";
 
 const userContext = createContext()
 
@@ -18,8 +19,7 @@ const authContext = ({ children }) => {
                 const token = localStorage.getItem('token');
                 if(token){
                 console.log("VERIFY API CALL RUNNING");
-                console.log("http://localhost:3000/api/auth/verify")
-                const response = await axios.get('http://localhost:3000/api/auth/verify', {
+                const response = await axios.get(`${API_URL}/auth/login/auth/verify`, {
                     headers : {
                         "Authorization" : `Bearer ${token}`
                     }

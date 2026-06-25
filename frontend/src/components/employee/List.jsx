@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { columns, EmployeeButtons } from '../../utils/EmployeeHelper';
 import DataTable from 'react-data-table-component';
 import axios from 'axios';
+import { API_URL, SERVER_URL } from "../../config/api";
 
 const List = () => {
     const [employees, setEmployees] = useState([]);
@@ -13,7 +14,7 @@ useEffect(() => {
     setEmpLoading(true);
     try {
       // Fixed: Updated endpoint path from /api/department to /api/employee
-      const response = await axios.get("http://localhost:3000/api/employee", {
+      const response = await axios.get(`${API_URL}/employee`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -30,7 +31,7 @@ useEffect(() => {
           dob: new Date(emp.dob).toLocaleDateString(), 
           profileImage: (
     <img
-      src={`http://localhost:3000/uploads/${emp.userId.profileImage}`}
+      src={`${SERVER_URL}/uploads/${employee.userId?.profileImage}`}
       alt="Employee"
       className="w-10 h-10 rounded-full"
     />
